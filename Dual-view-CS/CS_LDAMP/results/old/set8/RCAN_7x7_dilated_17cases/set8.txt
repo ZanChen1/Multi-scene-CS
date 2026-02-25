@@ -1,0 +1,4 @@
+Denoiser, RCAN_7x7_dilated_17cases, Rate, 0.050000, Image_name, 1.tif, PSNR, 22.817167, SSIM, 0.578873 
+Denoiser, RCAN_7x7_dilated_17cases, Rate, 0.050000, Image_name, 2.tif, PSNR, 24.248156, SSIM, 0.633332 
+Denoiser, RCAN_7x7_dilated_17cases, Rate, 0.050000, Image_name, 3.tif, PSNR, 24.402848, SSIM, 0.678630 
+Denoiser, RCAN_7x7_dilated_17cases, Rate, 0.200000, Image_name, 1.tif, PSNR, 27.994061, SSIM, 0.804178 

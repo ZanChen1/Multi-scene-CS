@@ -1,0 +1,21 @@
+DnCNN_20Layers_3x3_17cases,0.1,Bernoulli, 00524.bmp,28.091844,0.777019
+DnCNN_20Layers_3x3_17cases,0.1,Bernoulli, 00548.bmp,30.769549,0.817618
+DnCNN_20Layers_3x3_17cases,0.1,Bernoulli, 00794.bmp,28.228861,0.86003
+DnCNN_20Layers_3x3_17cases,0.1,Bernoulli, 01078.bmp,24.72483,0.798602
+DnCNN_20Layers_3x3_17cases,0.1,Bernoulli, 01102.bmp,27.947037,0.746651
+DnCNN_20Layers_3x3_17cases,0.1,Bernoulli, 01112.bmp,24.583139,0.617651
+DnCNN_20Layers_3x3_17cases,0.1,Bernoulli, 01792.bmp,30.769549,0.817618
+DnCNN_20Layers_3x3_17cases,0.1,Bernoulli, 01847.bmp,23.56876,0.722505
+DnCNN_20Layers_3x3_17cases,0.1,Bernoulli, 01888.bmp,31.360686,0.845953
+DnCNN_20Layers_3x3_17cases,0.1,Bernoulli, 02309.bmp,34.451023,0.904102
+DnCNN_20Layers_3x3_17cases,0.1,Bernoulli, 02514.bmp,20.613154,0.408797
+DnCNN_20Layers_3x3_17cases,0.1,Bernoulli, 02515.bmp,27.764551,0.620387
+DnCNN_20Layers_3x3_17cases,0.1,Bernoulli, 03143.bmp,26.750102,0.861013
+DnCNN_20Layers_3x3_17cases,0.1,Bernoulli, 03152.bmp,22.366791,0.550425
+DnCNN_20Layers_3x3_17cases,0.1,Bernoulli, 03168.bmp,22.257129,0.622016
+DnCNN_20Layers_3x3_17cases,0.1,Bernoulli, 03584.bmp,21.353758,0.517501
+DnCNN_20Layers_3x3_17cases,0.1,Bernoulli, 03848.bmp,40.337647,0.96588
+DnCNN_20Layers_3x3_17cases,0.1,Bernoulli, 03896.bmp,34.215856,0.883558
+DnCNN_20Layers_3x3_17cases,0.1,Bernoulli, 04224.bmp,17.968341,0.415405
+DnCNN_20Layers_3x3_17cases,0.1,Bernoulli, 04474.bmp,24.985656,0.759687
+,,,,27.15541315,0.7256209

@@ -1,0 +1,10 @@
+Denoiser, TVNLR, Rate, 0.100000, Image_name, 1.tif, PSNR, 22.925029, SSIM, 0.596547 
+Denoiser, TVNLR, Rate, 0.100000, Image_name, 2.tif, PSNR, 26.499620, SSIM, 0.758349 
+Denoiser, TVNLR, Rate, 0.100000, Image_name, 1.tif, PSNR, 22.925029, SSIM, 0.596547 
+Denoiser, TVNLR, Rate, 0.100000, Image_name, 2.tif, PSNR, 26.499620, SSIM, 0.758349 
+Denoiser, TVNLR, Rate, 0.100000, Image_name, 3.tif, PSNR, 26.022646, SSIM, 0.771997 
+Denoiser, TVNLR, Rate, 0.100000, Image_name, 4.tif, PSNR, 33.522640, SSIM, 0.895914 
+Denoiser, TVNLR, Rate, 0.100000, Image_name, 5.tif, PSNR, 32.119887, SSIM, 0.852862 
+Denoiser, TVNLR, Rate, 0.100000, Image_name, 6.tif, PSNR, 27.265997, SSIM, 0.795623 
+Denoiser, TVNLR, Rate, 0.100000, Image_name, 7.tif, PSNR, 24.564650, SSIM, 0.789849 
+Denoiser, TVNLR, Rate, 0.100000, Image_name, 8.tif, PSNR, 28.614567, SSIM, 0.846134 
