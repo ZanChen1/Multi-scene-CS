@@ -1,0 +1,51 @@
+function [measure,quantize] = para_set(measure, denoize_choice)
+
+
+quantize = [];
+
+
+if strcmp(measure.Test_set_name, 'BSD68')
+    measure.ori_im = measure.ori_im(1:end-1, 1:end-1);
+    measure.block_height = 32; %%
+    measure.block_width = 32;   %%
+    
+elseif strcmp(measure.Test_set_name, 'urban100')
+
+	[image_height, image_width]=size(measure.ori_im);
+	[measure.block_height,measure.block_width, image_height, image_width] = blocksize_urban100_set(image_height, image_width);
+	measure.ori_im = measure.ori_im(1:image_height, 1:image_width);    %裁剪
+    
+else
+    measure.block_width = 64;
+    measure.block_height = 64;
+end
+
+%% measurement parameter setting
+[block_size1 block_size2]=size(measure.ori_im);
+measure.image_width = block_size2; %divide the whole image into small blocks
+measure.image_height = block_size1;
+measure.rate_allocation = ceil(measure.image_width*measure.image_height*measure.rate);
+
+q=1:(measure.image_width*measure.image_height);
+step(1,1) = 1;
+step(1,2) = measure.rate_allocation;
+measure.OMEGA = q(step(1,1):step(1,2));
+measure.P_image=randperm(measure.image_height*measure.image_width);
+measure.P_block=randperm(measure.block_width*measure.block_height);
+
+
+
+%%
+denoise_name_all = {'DnCNN_20Layers_10cases', 'DnCNN_17Layers_10cases',...
+    'DnCNN_20Layers_3x3_17cases',...
+    'RCAN_5x5_dilated_17cases', 'RCAN_5x5_dilated_10cases',...
+    'RCAN_3x3_dilated_17cases', 'RCAN_5x5_17cases',...
+    'EDSR_5x5_17cases', 'EDSR_3x3_10cases',...
+    'BM3D', 'NLR-CS', 'TVNLR', 'BCS-SPL', 'RCAN_5x5_dilated_1case','RCAN_5x5_dilated_17cases+', ...
+    'RCAN_7x7_dilated_17cases','ADMM-Net','MWCNN17','MWCNN24','rcan1b','ncrcan','MWDNN','DPIR','Restormer'};
+measure.denoize_name = denoise_name_all{denoize_choice};
+% measure.denoize_fix_name = denoise_fix_all{denoize_fix_choice};
+measure.model = 'Bernoulli';   %% Hadarmad or Bernoulli or Diffraction or Cartesian
+
+
+end

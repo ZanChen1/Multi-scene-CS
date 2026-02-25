@@ -1,0 +1,95 @@
+function [x_hat,PSNR] = Prox_Moment_Progressive_backup(y_all, AMP_iters, denoiser, measure, quantize, par, PSNR_func)
+
+
+width =measure.image_height;
+height = measure.image_width;
+denoi=@(noisy,sigma_hat) denoise(noisy,sigma_hat,width,height,denoiser);
+
+y = cell2mat(y_all(1))';
+OMEGA=cell2mat(measure.OMEGA(1));
+k = ceil(length(OMEGA)/(measure.image_height*measure.image_width/measure.block_size^2));
+Phi_mt = measure.Phi./(k/measure.block_size^2);
+M=@(z)A_bp(z,OMEGA,measure.P_image,measure.P_block,measure.Phi);
+Mt=@(z)At_bp(z,OMEGA,measure.P_image,measure.P_block,Phi_mt);
+
+
+
+
+%%
+n=width*height;
+m=length(y);
+x_t{2} = zeros(n,1);
+alpha = 1;
+%%
+
+v_t=Mt((M(x_t{2}))'-y);
+x_t{1}=x_t{2}-alpha.*v_t;
+[sigma_hat1,~] = NoiseLevel(reshape(x_t{1},height,width));
+if sigma_hat1>90
+    sigma_hat1=SigEstmate_SigCNN(reshape(x_t{1},height,width));
+end
+x_t{2}=double(denoi(x_t{1},sigma_hat1));
+sigma_hat2(1)=SigEstmate_SigCNN(reshape(x_t{2},height,width));
+sigma_hat_temp = 100;
+%%
+v_t = zeros(n,1);
+PSNR=zeros(1,AMP_iters(1));
+j = 2;
+i = 1;
+while i<=AMP_iters(quantize.layer)
+    eta=randn(1,n);
+    epsilon = 1;
+    gamma=1/(m*epsilon).*eta*(denoi(x_t{1}+epsilon*eta',sigma_hat1)-x_t{2});
+    tic
+    v_t=gamma.*v_t+Mt((M(x_t{2}))'-y);
+    x_t{1}=x_t{2}-alpha.*v_t;
+    sigma_hat1=SigEstmate_SigCNN(reshape(x_t{1},height,width));
+    x_t{2}=double(denoi(x_t{1},sigma_hat1));
+    sigma_hat2(i)=SigEstmate_SigCNN(reshape(x_t{2},height,width));
+    PSNR(i) = PSNR_func(x_t{2});
+    
+    if i>=AMP_iters(j)
+        j = j+1;
+    end
+    
+    if i>=AMP_iters(j-1) &&  ~isempty(par.or_bin{j})
+        
+        OMEGA=cell2mat(measure.OMEGA(1:j));
+        quantize.OMEGA = measure.OMEGA(1:j);
+        k = ceil(length(OMEGA)/(measure.image_height*measure.image_width/measure.block_size^2));
+        Phi_mt = measure.Phi./(k/measure.block_size^2);
+        M=@(z)A_bp(z,OMEGA,measure.P_image,measure.P_block,measure.Phi);
+        Mt=@(z)At_bp(z,OMEGA,measure.P_image,measure.P_block,Phi_mt);
+        par.rim=x_t{2};
+        [par]=progressive_quantize(par,M, quantize);
+        if iscell(par.dec)
+            y=cell2mat(par.dec)';
+        end
+        m=length(y);
+    end
+
+    
+    a(i,1) = max(x_t{2}(:));
+    a(i,2) = min(x_t{2}(:));
+    if a(i,1) > 255 || a(i,2) < 0
+        i = AMP_iters(j-1);
+        break;
+    else
+        i = i+1;
+        x_hat = x_t{2};
+    end
+    
+    
+    
+end
+
+
+
+x_hat=reshape(x_hat,[height width]);
+fprintf('iteration:%d \n', i);
+
+
+
+end
+
+

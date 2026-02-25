@@ -1,0 +1,1 @@
+Denoiser, RCAN_5x5_dilated_17cases, Rate, 0.100000, Image_name, 00001.bmp, PSNR, 36.661287, SSIM, 0.941327 
