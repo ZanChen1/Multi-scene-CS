@@ -1,1 +1,21 @@
+# Multi-scene Separation and Reconstruction from Fused Random Compressed Measurements
 
+This repository provides implementable code for multi-scene separation and reconstruction from fused random compressed measurements. 
+
+## How to Run
+
+The main function can be accessed from:  
+`Dual-view-CS/CS_DualView/main/main.m`
+
+## Requirements
+
+This code uses a Matlab-Python bridge and tests with the following Python environment:
+
+- **Python**: 3.7.16
+- **PyTorch**: 1.12.0+cu116
+- **torchvision**: 0.13.0+cu116 (installed with PyTorch)
+- **numpy**: 1.21.6
+- **opencv-python**: 4.8.1.78
+- **einops**: 0.6.1
+- **PyYAML**: 6.0
+- **basicsr**: >=1.4.2 (as used in the original Restormer implementation)
