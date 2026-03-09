@@ -35,6 +35,7 @@ indicated paths under `Trained_Weights/MWCNN`:
 
 - Downloading them from the authors’ shared storage and update the links below:
   [https://drive.google.com/drive/folders/1T5yvuDCToA_NU11GLnZKoVaXq2at7fSL?usp=drive_link](https://drive.google.com/drive/folders/1p6MAShg5g5J3Ip-2NZu_zW2wCThDdEkP?usp=drive_link)
+
 These MWCNN models are the ones used in our paper
 
 > Zan Chen, Tao Wang, Jun Li, Wenlong Guo, Yuanjing Feng,  
