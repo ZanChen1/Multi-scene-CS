@@ -26,5 +26,15 @@ This repository does **not** ship large pretrained weights.
 Please download the following models manually and place them at the
 indicated paths under `Trained_Weights/Restormer/pretrained_models`:
 
-- Download the gray Gaussian denoising Restormer model from HuggingFace  
+- Download the Gaussian denoising Restormer model from HuggingFace  
   https://huggingface.co/deepinv/Restormer/tree/main
+
+These MWCNN models are the ones used in our paper
+
+> Zan Chen, Tao Wang, Jun Li, Wenlong Guo, Yuanjing Feng,  
+> Xueming Qian, and Xingsong Hou.  
+> **Discard Significant Bits of Compressed Sensing: A Robust Image Coding for Resource-Limited Contexts.**  
+> ACM Trans. Multimedia Comput. Commun. Appl. 21, 1, Article 31 (January 2025), 25 pages. 
+  **Please download them from the authors’ shared storage and update the links below:**
+  https://drive.google.com/drive/folders/1T5yvuDCToA_NU11GLnZKoVaXq2at7fSL?usp=drive_link
+
