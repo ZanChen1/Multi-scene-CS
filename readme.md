@@ -23,18 +23,22 @@ This code uses a Matlab-Python bridge and tests with the following Python enviro
 ## Pretrained models
 
 This repository does **not** ship large pretrained weights.  
+
 Please download the following models manually and place them at the
 indicated paths under `Trained_Weights/Restormer/pretrained_models`:
 
 - Download the Gaussian denoising Restormer model from HuggingFace  
   https://huggingface.co/deepinv/Restormer/tree/main
 
+Please download the following models manually and place them at the
+indicated paths under `Trained_Weights/MWCNN`:
+  **Please download them from the authors’ shared storage and update the links below:**
+  [https://drive.google.com/drive/folders/1T5yvuDCToA_NU11GLnZKoVaXq2at7fSL?usp=drive_link](https://drive.google.com/drive/folders/1p6MAShg5g5J3Ip-2NZu_zW2wCThDdEkP?usp=drive_link)
 These MWCNN models are the ones used in our paper
 
 > Zan Chen, Tao Wang, Jun Li, Wenlong Guo, Yuanjing Feng,  
 > Xueming Qian, and Xingsong Hou.  
 > **Discard Significant Bits of Compressed Sensing: A Robust Image Coding for Resource-Limited Contexts.**  
 > ACM Trans. Multimedia Comput. Commun. Appl. 21, 1, Article 31 (January 2025), 25 pages. 
-  **Please download them from the authors’ shared storage and update the links below:**
-  https://drive.google.com/drive/folders/1T5yvuDCToA_NU11GLnZKoVaXq2at7fSL?usp=drive_link
+
 
