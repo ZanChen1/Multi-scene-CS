@@ -19,3 +19,12 @@ This code uses a Matlab-Python bridge and tests with the following Python enviro
 - **einops**: 0.6.1
 - **PyYAML**: 6.0
 - **basicsr**: >=1.4.2 (as used in the original Restormer implementation)
+
+## Pretrained models
+
+This repository does **not** ship large pretrained weights.  
+Please download the following models manually and place them at the
+indicated paths under `Trained_Weights/Restormer/pretrained_models`:
+
+- Download the gray Gaussian denoising Restormer model from HuggingFace  
+  https://huggingface.co/deepinv/Restormer/tree/main
